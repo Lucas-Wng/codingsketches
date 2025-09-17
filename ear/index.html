@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get PIERCED</title>
+  <style>
+    #container input[type="radio"] {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+    <h1>Piercing Guide</h1>
+  <div id="container">
+    <img src="ear.jpg" alt="Ear"  style="width:600px; height:auto;">
+  </div>
+
+  <script>
+    const container = document.getElementById("container");
+
+    function randomBetween(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Generate 50 buttons
+    for (let i = 0; i < 50; i++) {
+      const btn = document.createElement("input");
+      btn.type = "radio";
+      const top = randomBetween(100, 600);
+      const left = randomBetween(200, 500);
+
+      btn.style.top = top + "px";
+      btn.style.left = left + "px";
+
+      container.appendChild(btn);
+    }
+  </script>
+</body>
+</html>
